@@ -1,6 +1,37 @@
 @PetsFoodRatio.Api_HostAddress = http://localhost:5296
 
-GET {{PetsFoodRatio.Api_HostAddress}}/weatherforecast/
+### Get all pets
+GET {{PetsFoodRatio.Api_HostAddress}}/api/pets
 Accept: application/json
+
+###
+
+### Get specific pet by ID
+GET {{PetsFoodRatio.Api_HostAddress}}/api/pets/1
+Accept: application/json
+
+###
+
+### Create a new pet
+POST {{PetsFoodRatio.Api_HostAddress}}/api/pets
+Content-Type: application/json
+
+{
+  "name": "Buddy",
+  "breed": "Golden Retriever",
+  "gender": "Male",
+  "color": "Golden",
+  "weight": 30.5,
+  "birthDate": "2019-05-10T00:00:00Z",
+  "chipNumber": "CHIP789012"
+}
+
+###
+
+### Mark pet as deceased
+PATCH {{PetsFoodRatio.Api_HostAddress}}/api/pets/1/death
+Content-Type: application/json
+
+"2024-01-15T10:30:00Z"
 
 ###
